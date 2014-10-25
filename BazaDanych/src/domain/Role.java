@@ -7,7 +7,7 @@ public class Role {
 	private String name;
 	
 
-	private List<Privilege> privilages;
+	private List<Privilege> privileges;
 	private List<User> users;
 	public Role()
 	{
