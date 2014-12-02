@@ -1,6 +1,7 @@
 package repositories;
 
-import domain.Person;
+import main.Person;
+
 
 public interface IRepositoryCatalog {
 

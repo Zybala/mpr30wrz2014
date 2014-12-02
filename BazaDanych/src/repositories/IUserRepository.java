@@ -2,7 +2,11 @@ package repositories;
 
 import java.util.List;
 
-import domain.*;
+import main.Role;
+import main.User;
+
+
+import main.*;
 
 public interface IUserRepository extends IRepository<User>{
 
