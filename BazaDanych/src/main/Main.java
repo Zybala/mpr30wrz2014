@@ -21,16 +21,16 @@ public class Main {
 	public static void main(String[] args) {
 String url ="jdbc:hsqldb:hsql://localhost/workdb";
 		
-		User jnowak = new User();
-		jnowak.setUsername("zybala");
-		jnowak.setPassword("q1w2e3r4");
+		User wojciech = new User();
+		wojciech.setUsername("zybala");
+		wojciech.setPassword("q1w2e3r4");
 		
 		try 
 		{
 			Connection connection = DriverManager.getConnection(url);
 			
 			Repository<User> users = new UserRepository(connection);
-			users.save(jnowak);
+			users.save(wojciech);
 			List<User> usersFromDb = users.getAll();
 			
 			for(User userFromDb : usersFromDb)
