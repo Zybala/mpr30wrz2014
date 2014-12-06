@@ -36,7 +36,7 @@ String url ="jdbc:hsqldb:hsql://localhost/workdb";
 			for(User userFromDb : usersFromDb)
 				System.out.println(userFromDb.getNumber()+" "+userFromDb.getUsername()+" "+userFromDb.getPassword());
 			User user = users.get(1);
-			user.setPassword("1qaz2wsx");
+			user.setPassword("q1w2e3r4");
 			users.update(user);
 			users.delete(usersFromDb.get(0));
 			for(User userFromDb : users.getAll())
@@ -46,7 +46,7 @@ String url ="jdbc:hsqldb:hsql://localhost/workdb";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("koniec");
+		System.out.println("stop");
 	}
 
 }
