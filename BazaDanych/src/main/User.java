@@ -3,11 +3,19 @@ package main;
 import java.util.*;
 
 public class User {
+	public String Number;
 	public String username;
 	public String password;
 	public String email;
 	public String security_question;
 	public String security_question_answer;
+	
+	public String getNumber() {
+		return username;
+	}
+	public void setNumber(String number) {
+		this.Number = number;
+	}
 	
 	public String getUsername() {
 		return username;
