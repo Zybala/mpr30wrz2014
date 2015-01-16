@@ -2,16 +2,15 @@ package main;
 
 import java.util.*;
 
-public class Role {
+
+public class Role extends Entity {
 	
 	private String name;
-	
-
-	private List<Privilege> privileges;
+	private List<Privilege> privilege;
 	private List<User> users;
 	public Role()
 	{
-		privileges=new ArrayList<Privilege>();
+		privilege=new ArrayList<Privilege>();
 		users= new ArrayList<User>();
 	}
 	
@@ -21,11 +20,11 @@ public class Role {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Privilege> getPrivileges() {
-		return privileges;
+	public List<Privilege> getPrivilege() {
+		return privilege;
 	}
-	public void setPrivileges(List<Privilege> privileges) {
-		this.privileges = privileges;
+	public void setPrivilege(List<Privilege> privilege) {
+		this.privilege = privilege;
 	}
 	public List<User> getUsers() {
 		return users;

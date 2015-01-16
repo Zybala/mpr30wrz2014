@@ -11,13 +11,13 @@ import java.util.List;
 public class Person extends Entity{
 	
 	public Person() {
+		super();
 		this.locations=new ArrayList<Address>();
 		
 	}
 	private String name;
 	private String surename;
 	private String middlename;
-	private int No;
 	private String IDnumber;
 	private String DOB;
 	
@@ -42,12 +42,7 @@ public class Person extends Entity{
 	public void setMiddlename(String middlename) {
 		this.middlename = middlename;
 	}
-	public int No() {
-		return No;
-	}
-	public void setNo(int No) {
-		this.No = No;
-	}
+
 	public String getIDnumber() {
 		return IDnumber;
 	}
@@ -64,6 +59,8 @@ public class Person extends Entity{
 		return user;
 	}
 	public void setUser(User user) {
+		if(!this.equals(user.getPerson()))
+		user.setPerson(this);
 		this.user = user;
 	}
 	public List<Address> getLocations() {

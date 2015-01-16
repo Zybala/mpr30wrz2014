@@ -8,7 +8,6 @@ import java.util.List;
 public class Privilege extends Entity {
 
 	private String name;
-	
 	private List<Role> roles;
 
 	public Privilege()

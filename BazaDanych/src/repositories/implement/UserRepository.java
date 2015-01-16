@@ -6,20 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import main.Person;
 import main.Role;
 import main.User;
-
 import repositories.IRepository;
 import repositories.IUserRepository;
+import repositories.implement.IEntityBuilder;
 
-public class UserRepository 
-	extends Repository<User>
-	implements IUserRepository
+
+
+public class UserRepository extends Repository<User> implements IUserRepository
+	
 {
 
-	protected UserRepository(Connection connection, EntityBuilder<User> builder) {
+	protected UserRepository(Connection connection, IEntityBuilder<User> builder) {
 		super(connection, builder);
 	}
 
@@ -44,30 +44,27 @@ public class UserRepository
 
 	
 	protected String getInsertQuery() {
-		return "INSERT INTO users(login,password) values(?,?)";
+		return "INSERT INTO users(username,password) values(?,?)";
 	}
 
 	
 	protected String getUpdateQuery() {
-		return "update users set (login,password)=(?,?) where Number=?";
+		return "update users set (username,password)=(?,?) where id=?";
 	}
 
 	
 	public List<User> withRole(Role role) {
-		
 		return null;
 	}
 
-	
 	public List<User> withRole(String roleName) {
-		
 		return null;
 	}
 
 	
 	public List<User> withRole(int roleId) {
-		
-		return null;
+			return null;
 	}
-
+	
+	
 }

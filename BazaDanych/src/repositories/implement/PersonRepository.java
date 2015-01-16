@@ -3,21 +3,19 @@ package repositories.implement;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
 import main.Person;
-
-import repositories.implement.EntityBuilder;
+//import repositories.implement.EntityBuilder;
 
 public class PersonRepository extends Repository<Person> {
 	
 
 		private String insertSql=
-				"INSERT INTO person(name,surname,pesel) VALUES(?,?,?)";
+				"INSERT INTO person(name,surname,DOB) VALUES(?,?,?)";
 		
 		private String updateSql=
-				"UPDATE person SET (name,surname,pesel)=(?,?,?) WHERE id=?";
+				"UPDATE person SET (name,surname,DOB)=(?,?,?) WHERE Number=?";
 		
-		public PersonRepository(Connection connection, EntityBuilder<Person> builder) {
+		public PersonRepository(Connection connection, IEntityBuilder<Person> builder) {
 			super(connection, builder);
 		}
 		

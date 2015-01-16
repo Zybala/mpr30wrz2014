@@ -2,19 +2,25 @@ package main;
 
 import java.util.*;
 
-public class User {
-	public String Number;
+
+
+
+public class User extends Entity {
 	public String username;
 	public String password;
+	public Person person;
 	public String email;
-	public String security_question;
-	public String security_question_answer;
 	
-	public String getNumber() {
-		return username;
+	private List<Role> roles;
+	public User()
+	{
+		roles=new ArrayList<Role>();
 	}
-	public void setNumber(String number) {
-		this.Number = number;
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 	
 	public String getUsername() {
@@ -29,23 +35,18 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmail2() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail2(String email2) {
-		this.email = email2;
+	public void setEmail2(String email) {
+		this.email = email;
 	}
-	public String getSecurity_question() {
-		return security_question;
+
+	public Person getPerson() {
+		return person;
 	}
-	public void setSecurity_question(String security_question) {
-		this.security_question = security_question;
-	}
-	public String getSecurity_question_answer() {
-		return security_question_answer;
-	}
-	public void setSecurity_question_answer(String security_question_answer) {
-		this.security_question_answer = security_question_answer;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 	
 

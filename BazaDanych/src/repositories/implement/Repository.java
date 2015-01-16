@@ -1,7 +1,5 @@
 package repositories.implement;
 
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,12 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.Entity;
-import main.Person;
-
 import repositories.IRepository;
+import main.Entity;
 
-public abstract class Repository<TEntity extends Entity> {
+
+
+
+public abstract class Repository<TEntity extends Entity> implements IRepository<TEntity>{
 	
 	protected Connection connection;
 	protected PreparedStatement insert;
@@ -22,20 +21,20 @@ public abstract class Repository<TEntity extends Entity> {
 	protected PreparedStatement update;
 	protected PreparedStatement selectAll;
 	protected PreparedStatement delete;
-	protected EntityBuilder<TEntity> builder;
+	protected IEntityBuilder<TEntity> builder;
 	
 	protected String selectByIdSql=
 			"SELECT * FROM "
 			+ getTableName()
-			+ " WHERE id=?";
+			+ " WHERE Number=?";
 	protected String deleteSql=
 			"DELETE FROM "
 			+ getTableName()
-			+ " WHERE id=?";
+			+ " WHERE Number=?";
 	protected String selectAllSql=
 			"SELECT * FROM "+ getTableName();
 	
-	protected Repository(Connection connection,EntityBuilder<TEntity> builder)
+	protected Repository(Connection connection,IEntityBuilder<TEntity> builder)
 	{
 		this.builder=builder;
 		this.connection = connection;

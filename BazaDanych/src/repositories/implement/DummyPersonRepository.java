@@ -6,7 +6,6 @@ import main.Person;
 
 import repositories.IRepository;
 
-
 public class DummyPersonRepository implements IRepository<Person>{
 
 	private DummyDb db;
@@ -30,14 +29,11 @@ public class DummyPersonRepository implements IRepository<Person>{
 
 	
 	public void delete(Person entity) {
-
 		db.persons.remove(entity);
-		
-	}
+		}
 
 	
 	public Person get(int Number) {
-
 		for(Person p: db.persons)
 			if(p.getNumber()==Number)
 				return p;

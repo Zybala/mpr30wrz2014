@@ -8,7 +8,7 @@ public abstract class Entity {
 		return Number;
 	}
 
-	public void setId(int Number) {
+	public void setNumber(int Number) {
 		this.Number = Number;
 	}
 	
